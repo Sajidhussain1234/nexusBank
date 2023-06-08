@@ -1,0 +1,1 @@
+This project is copy of bank system project. Difference is that here node module is structured according express folder structure while in bank system backend is structured according to strapi folder structure. 
