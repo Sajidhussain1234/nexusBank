@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import axios from 'axios';
 import { AuthContext } from "../context/auth" 
 import { AlertContext } from "../context/alert" 
+import { UserContext} from "../context/user" 
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -11,9 +12,11 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
-    const context = useContext(AuthContext); 
+    const authContext = useContext(AuthContext); 
+    const userContext = useContext(UserContext); 
     const alertContext = useContext(AlertContext); 
-    const {authTokenStore} = context;
+    const {authTokenStore} = authContext;
+    const {getUser} = userContext;
     const {showAlert} = alertContext;
 
     const handleSubmit = async (e) => {
@@ -25,6 +28,7 @@ const Login = () => {
             setIsLoading(false);
             showAlert('Successfully logged in');           
             authTokenStore(authToken); 
+            getUser(); 
         } catch (error) {
             setIsLoading(false)
             showAlert(error.response.data.error);

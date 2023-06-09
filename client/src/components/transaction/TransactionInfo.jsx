@@ -42,11 +42,11 @@ const TransactionInfo = () => {
     };
 
 
-    if (isLoading) return (<div className="text-center mt-4">
-        <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </div>
-    </div>)
+    // if (isLoading) return (<div className="text-center mt-4">
+    //     <div className="spinner-border text-primary" role="status">
+    //         <span className="visually-hidden">Loading...</span>
+    //     </div>
+    // </div>)
     if (isError) return (<h4>Some thing went wrong...</h4>)
 
     return (
@@ -93,7 +93,7 @@ const TransactionInfo = () => {
                                 })}
                             </>
                         ) : (
-                            <p> There is nothing to show in history</p>                            
+                            <p> No transaction found </p>                            
                         )
                     }
 

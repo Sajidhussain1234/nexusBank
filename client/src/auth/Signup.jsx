@@ -30,7 +30,7 @@ const Signup = () => {
             showAlert('Account created successfully');
             authTokenStore(authToken);
             const userId = response.data.user._id;
-            const response1 = await axios.post('http://localhost:3002/api/accounts/',
+             await axios.post('http://localhost:3002/api/accounts/',
                 {
                     user: userId
                 }

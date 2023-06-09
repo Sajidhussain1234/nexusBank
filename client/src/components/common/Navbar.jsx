@@ -38,31 +38,32 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink exact className="nav-link" activeClassName="active" to="/">
+              {/* <NavLink exact className="nav-link" activeclassname="active" to="/"> */}
+              <NavLink className="nav-link" activeclassname="active" to="/">
                 Home
               </NavLink>
             </li>
             {localStorage.getItem('token') ? (
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" activeClassName="active" to="/user">
+                  <NavLink className="nav-link" activeclassname="active" to="/user">
                     User
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" activeClassName="active" to="/account">
+                  <NavLink className="nav-link" activeclassname="active" to="/account">
                     Account
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" activeClassName="active" to="/transaction">
+                  <NavLink className="nav-link" activeclassname="active" to="/transaction">
                     Transaction
                   </NavLink>
                 </li>
               </>
             ) : null}
             <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/about">
+              <NavLink className="nav-link" activeclassname="active" to="/about">
                 About Us
               </NavLink>
             </li>
